@@ -1,7 +1,7 @@
 # The Ashen Hand
 
 A shadow order for [MeitouClient](https://github.com/Meitou-Modding-Ecosystem/MeitouClient), built on
-[Rivalry Core](https://github.com/Meitou-Modding-Ecosystem/MeitouMods): thieves fund it, hunters answer its grudges. Mod id `ashen.hand`;
+[Rivalry Core](https://github.com/Meitou-Modding-Ecosystem/RivalryCore): thieves fund it, hunters answer its grudges. Mod id `ashen.hand`;
 what it does, its data file and settings: [docs/ashen-hand.md](docs/ashen-hand.md). GPL-3.0-or-later.
 
 Rivalry Core is not in this repo: `meitou.lock.json` pins its release (`rivalry-core-v0.6.0`), which the build downloads into `deps/`
