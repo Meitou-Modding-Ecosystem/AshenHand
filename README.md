@@ -1,27 +1,24 @@
-# Meitou mod template
+# The Ashen Hand
 
-Template for a [MeitouClient](https://github.com/Meitou-Modding-Ecosystem/MeitouClient) code mod repo in the Meitou-Modding-Ecosystem
-org. GPL-3.0-or-later.
+A shadow order for [MeitouClient](https://github.com/Meitou-Modding-Ecosystem/MeitouClient), built on
+[Rivalry Core](https://github.com/Meitou-Modding-Ecosystem/MeitouMods): thieves fund it, hunters answer its grudges. Mod id `ashen.hand`;
+what it does, its data file and settings: [docs/ashen-hand.md](docs/ashen-hand.md). GPL-3.0-or-later.
 
-- Build and run in Visual Studio (launch profiles for this repo's engine or the installed launcher, deploy to the game): [docs/play.md](docs/play.md).
+Rivalry Core is not in this repo: `meitou.lock.json` pins its release (`rivalry-core-v0.6.0`), which the build downloads into `deps/`
+([framework lock](https://github.com/TheIvoryDisaster/GutenStructure/blob/beta/docs/framework-lock.md)). To build against a local Rivalry Core
+clone instead, see [docs/local-development.md](docs/local-development.md). New Rivalry Core releases arrive as PRs from the Framework update
+workflow, merged when CI passes ([framework update](https://github.com/TheIvoryDisaster/GutenStructure/blob/beta/docs/framework-update.md)).
+
+- Build and run locally with Visual Studio, VS Code or the terminal (this repo's engine or the installed launcher, deployed to the game): [docs/play.md](docs/play.md).
 - Setting up the repos on your machine: [docs/local-development.md](docs/local-development.md).
 - Instructing agents on a change that spans repos: [docs/agents-across-repos.md](docs/agents-across-repos.md).
-
-## Use this template
-
-1. Create the repo from this template on GitHub (Use this template > Create a new repository), then clone it with
-   `git clone --recurse-submodules <your repo URL>`.
-2. Rename `ExampleMod` to your mod's name: the folders `ExampleMod` and `ExampleMod.Tests`, the files inside them named `ExampleMod*`, the
-   `AssemblyName`/`RootNamespace` in both `.csproj` files, the namespaces, and the paths in `MeitouMod.slnx` (rename that file too).
-3. In `meitou.json` set `id` (`<author-or-mod>.<name>`), `assemblies` and `entry`; keep the version only there.
-4. Open the `.slnx` in Visual Studio and press F5 ([docs/play.md](docs/play.md)).
 
 ## Layout
 
 - `engine/`: MeitouClient as a git submodule, pinned to the engine commit the mod builds against. After a pull that moves it:
   `git submodule update --init`.
-- `<Mod>/`: the mod's project and `meitou.json`. `<Mod>.Tests/`: its tests (synthetic worlds, no game install needed).
-  `<Mod>.Data/` (optional): a generator that writes `<Mod>.mod` from the installed game.
+- `AshenHand/`: the mod's project and `meitou.json`. `AshenHand.Tests/`: its tests (synthetic worlds, no game install needed).
+  `AshenHand.Data/`: the generator that writes `AshenHand.mod` from the installed game (Play runs it).
 - `Play/`: one-click build, deploy and run.
 - `Directory.Build.props` imports the engine's, so mods build with the game's settings (warnings are errors).
 
