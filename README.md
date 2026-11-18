@@ -6,7 +6,8 @@ what it does, its data file and settings: [docs/ashen-hand.md](docs/ashen-hand.m
 
 Rivalry Core is not in this repo: `meitou.lock.json` pins its release (`rivalry-core-v0.6.0`), which the build downloads into `deps/`
 ([framework lock](https://github.com/TheIvoryDisaster/GutenStructure/blob/beta/docs/framework-lock.md)). To build against a local Rivalry Core
-clone instead, see [docs/local-development.md](docs/local-development.md).
+clone instead, see [docs/local-development.md](docs/local-development.md). New Rivalry Core releases arrive as PRs from the Framework update
+workflow, merged when CI passes ([framework update](https://github.com/TheIvoryDisaster/GutenStructure/blob/beta/docs/framework-update.md)).
 
 - Build and run locally with Visual Studio, VS Code or the terminal (this repo's engine or the installed launcher, deployed to the game): [docs/play.md](docs/play.md).
 - Setting up the repos on your machine: [docs/local-development.md](docs/local-development.md).
