@@ -2,7 +2,7 @@
 
   <!--
     The Ashen Hand (docs/ashen-hand.md): a shadow order built on Rivalry Core. Its records are in AshenHand.mod, generated from the installed
-    game by AshenHand.Data. Built against the game's and Rivalry Core's assemblies, never copied: the game loads them.
+    game by AshenHand.Data. Built against the game's assemblies and Rivalry Core's release (meitou.lock.json), never copied: the game loads them.
   -->
 
   <PropertyGroup>
@@ -11,11 +11,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../engine/src/Meitou.Core/Meitou.Core.csproj" Private="false" />
-    <ProjectReference Include="../engine/src/Meitou.Data/Meitou.Data.csproj" Private="false" />
-    <ProjectReference Include="../engine/src/Meitou.Simulation/Meitou.Simulation.csproj" Private="false" />
-    <ProjectReference Include="../engine/src/Meitou.Game/Meitou.Game.csproj" Private="false" />
-    <ProjectReference Include="../RivalryCore/RivalryCore.csproj" Private="false" />
+    <ProjectReference Include="$(MeitouEngineDir)src/Meitou.Core/Meitou.Core.csproj" Private="false" />
+    <ProjectReference Include="$(MeitouEngineDir)src/Meitou.Data/Meitou.Data.csproj" Private="false" />
+    <ProjectReference Include="$(MeitouEngineDir)src/Meitou.Simulation/Meitou.Simulation.csproj" Private="false" />
+    <ProjectReference Include="$(MeitouEngineDir)src/Meitou.Game/Meitou.Game.csproj" Private="false" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,6 +1,6 @@
 # The Ashen Hand (content mod)
 
-A shadow order built on [Rivalry Core](rivalry-core.md) (`ashen.hand`, needs `rivalry.core` 0.6). Code: `AshenHand/`; data file generator:
+A shadow order built on [Rivalry Core](https://github.com/Meitou-Modding-Ecosystem/MeitouMods/blob/beta/docs/rivalry-core.md) (`ashen.hand`, needs `rivalry.core` 0.6). Code: `AshenHand/`; data file generator:
 `AshenHand.Data/`; tests: `AshenHand.Tests/`. The name is a working title.
 
 ## Lore
@@ -10,7 +10,7 @@ A shadow order built on [Rivalry Core](rivalry-core.md) (`ashen.hand`, needs `ri
 - The dig needs money, hands and silence, hence its three arms: thieves fund it, takers supply labour (captives sold on, later kept), hunters
   answer anyone who hurts the order.
 - It owns no town and holds no relation: neutral to all until crossed. Its hunters set out from the Ashlands. Future steps: the dig as a world
-  state, takers who keep their captives; leaders' personalities and recruitment ([roadmap](roadmap.md)).
+  state, takers who keep their captives; leaders' personalities and recruitment ([roadmap](https://github.com/Meitou-Modding-Ecosystem/MeitouMods/blob/beta/docs/roadmap.md)).
 
 ## Rules
 
@@ -21,17 +21,17 @@ A shadow order built on [Rivalry Core](rivalry-core.md) (`ashen.hand`, needs `ri
 
 The player's cats are not in any container, so an outpost that holds only cats gives thieves nothing to take but pockets.
 
-Both rules pass `evidence` = the ledger, so each squad's leader carries an Ashen Hand Ledger (Rivalry Core's [Evidence](rivalry-core.md#evidence)):
+Both rules pass `evidence` = the ledger, so each squad's leader carries an Ashen Hand Ledger (Rivalry Core's [Evidence](https://github.com/Meitou-Modding-Ecosystem/MeitouMods/blob/beta/docs/rivalry-core.md#evidence)):
 a log of days spent watching a mark. Right-clicked in a player character's inventory it puts a bounty on its owner with every lawful faction,
 2 × the run's goal and at least 3000 (3000 for both today), so turning the owner in pays where executing them does not.
 
 ## Hunters
 
 Every member of a hunter squad is the same Ashen Hand Hunter; its leader takes a name from `AshenHandVoice.LeaderNames` and keeps it in
-Rivalry Core's [rival roster](rivalry-core.md#rival-leaders) until it dies, is jailed or recruited, so a leader the player beats or leaves for
+Rivalry Core's [rival roster](https://github.com/Meitou-Modding-Ecosystem/MeitouMods/blob/beta/docs/rivalry-core.md#rival-leaders) until it dies, is jailed or recruited, so a leader the player beats or leaves for
 dead can come back, and speaks of the last fight (`AshenHandVoice.Lines`: original starter lines for each outcome, a predecessor handed to the
 law, first words, the distracted and engage lines). Owning no town, the order names its homes in Rivalry Core's `Options.Homes`: the Ashlands
-region and Cat-Lon's Exile, the Second Empire exiles' town there ([factions](factions.md#bases); **Unknown** whether the region's BIOME_GROUP is
+region and Cat-Lon's Exile, the Second Empire exiles' town there ([factions](https://github.com/Meitou-Modding-Ecosystem/MeitouMods/blob/beta/docs/factions.md#bases); **Unknown** whether the region's BIOME_GROUP is
 named "Ashlands"). With neither found, the squad's road takes Rivalry Core's fallback (12 h). Handing a leader to the law alive (carried to a lawful cage, or its bounty
 claimed) wipes the order's grudges.
 
