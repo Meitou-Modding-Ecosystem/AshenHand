@@ -1,7 +1,7 @@
 # The Ashen Hand (content mod)
 
-A shadow order built on [Rivalry Core](https://github.com/Meitou-Modding-Ecosystem/RivalryCore/blob/beta/docs/rivalry-core.md) (`ashen.hand`, needs `rivalry.core` 0.6.7+ and Meitou 0.22.2 or later). Code: `AshenHand/`; data file generator:
-`AshenHand.Data/`; tests: `AshenHand.Tests/`. The name is a working title.
+A shadow order built on [Rivalry Core](https://github.com/Meitou-Modding-Ecosystem/RivalryCore/blob/beta/docs/rivalry-core.md) (`ashen.hand`, needs `rivalry.core` 0.6.7+ and Meitou 0.22.2 or later). Code: `AshenHand/`; tests:
+`AshenHand.Tests/`. The name is a working title.
 
 ## Lore
 
@@ -37,20 +37,16 @@ claimed) wipes the order's grudges.
 
 ## Data file
 
-`AshenHand.mod`, record ids `<n>-AshenHand.mod`: 1 the faction (default relation 0, no roaming population), 2 the thief and 3 the hunter
+The records are added at load, in the mod's data phase (`AshenHandMod.EditData`, MeitouClient `docs/modding.md` "Data phase"), from the
+loaded game's own records, so nothing copied from the game ships: `AshenHand.mod` is empty and builds without the game. Record ids `<n>-AshenHand.mod`: 1 the faction (default relation 0, no roaming population), 2 the thief and 3 the hunter
 (copies of the game's CHARACTER `Dust Bandit`: every field and link but those whose list starts with `dialog`; `faction` the order; the
 thief also without `weapons` and `crossbows`), 4 the thief squad (`squad`: thief, 1 to 4) and 5 the hunter squad (hunter, 3 to 5). The squads
 have no AI package: Rivalry Core drives them. 6 the ledger: an ITEM copying every field and link of the game's ITEM "Books" (else the first
 ITEM by id with "book" in its name; with none, no look, 0.2 kg), with its own name and text, `stackable` 1, `value` 20, no trade item.
 
-The people are copied from the installed game, so the file is generated, not committed (`.mod` is git-ignored):
-
-```
-dotnet run --project AshenHand.Data -- "<game folder>" "<Kenshi>/mods/AshenHand/AshenHand.mod"
-```
-
-Without arguments: the game from `KENSHI_PATH` or `meitou.local.json`, the file in the working directory. It reads the unmodded base files.
-It opens in FCS like any mod. **Unknown**: whether the copied Dust Bandit carries links besides talk that make it act as a bandit, and how
+They copy the merged data, so another mod's change to the Dust Bandit or the books loaded before the Ashen Hand carries over. A game
+without a CHARACTER `Dust Bandit` makes the data phase throw, and the game leaves the mod out for the session. An `AshenHand.mod` from
+before 0.3.3 holds the same records generated offline: delete it, and Play deploys the empty one. **Unknown**: whether the copied Dust Bandit carries links besides talk that make it act as a bandit, and how
 the game treats a FACTION record with only these two fields (Meitou reads absent fields as its defaults).
 
 ## Settings
@@ -66,6 +62,6 @@ with `ashen.hand.thieves` (or `ashen.hand.hunters, <character name>`) starts eit
 
 ## Evidence
 
-**Verified** by `AshenHand.Tests` (synthetic data and worlds, no population system): the generated records (copied fields, the thief
+**Verified** by `AshenHand.Tests` (synthetic data and worlds, no population system): the entry has a data phase; the built records (copied fields, the thief
 disarmed, no talk, squad counts), the file reading back as written, the thieves rule's two thresholds, the hunters rule's grudge.
-**Unknown**: everything in play; the generator against the real game data.
+**Unknown**: everything in play; the data phase against the real game data.

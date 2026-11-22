@@ -21,7 +21,6 @@ workflow, merged when CI passes ([framework update](https://github.com/TheIvoryD
   every pull run `powershell -ExecutionPolicy Bypass -File tools\Update-Local.ps1 -Clean -Build`
   ([keep clones current](docs/local-development.md#keep-clones-current)).
 - `AshenHand/`: the mod's project and `meitou.json`. `AshenHand.Tests/`: its tests (synthetic worlds, no game install needed).
-  `AshenHand.Data/`: the generator that writes `AshenHand.mod` from the installed game (Play runs it).
 - `Play/`: one-click build, deploy and run.
 - `Directory.Build.props` imports the engine's, so mods build with the game's settings (warnings are errors).
 

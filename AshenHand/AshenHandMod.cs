@@ -5,9 +5,10 @@ namespace AshenHand;
 
 /// <summary>
 /// The Ashen Hand's entry (docs/ashen-hand.md): two rules for Rivalry Core. Thieves visit a wealthy outpost; hunters come for a character the
-/// order holds a grudge against. Each squad's leader carries a ledger that, handed to the law, puts a bounty on them.
+/// order holds a grudge against. Each squad's leader carries a ledger that, handed to the law, puts a bounty on them. Its records are added in
+/// the data phase from the loaded game's own (<see cref="AshenHandData"/>), so the shipped AshenHand.mod is empty.
 /// </summary>
-public sealed class AshenHandMod : IMod
+public sealed class AshenHandMod : IMod, IModDataPhase
 {
     /// <summary>
     /// The mod's manifest id; the rules' names start with it.
@@ -36,10 +37,19 @@ public sealed class AshenHandMod : IMod
     /// </summary>
     public AshenHandSettings Settings { get; } = new();
 
+    /// <summary>
+    /// Adds the order's records, built from the merged game data (docs/ashen-hand.md "Data file"). Throws, so the game leaves the mod out, when
+    /// the game has no Dust Bandit to copy.
+    /// </summary>
+    public void EditData(ModDataContext c)
+    {
+        foreach (var record in AshenHandData.Build(c.Data).Records) c.Apply(record);
+    }
+
     public void Initialize(ModContext c)
     {
         c.AddSettings(Settings);
-        if (c.Data.Find(AshenHandData.Faction) is null) c.LogError("AshenHand.mod has no records: generate it (docs/ashen-hand.md \"Data file\").");
+        if (c.Data.Find(AshenHandData.Faction) is null) c.LogError("The order's records are missing: the data phase did not add them (see the log).");
 
         var rivalry = c.Dependency<IRivalryApi>(RivalryMod.Id) ?? throw new InvalidOperationException("The Ashen Hand needs Rivalry Core.");
         rivalry.Options.Homes[AshenHandData.Faction] = Homes;

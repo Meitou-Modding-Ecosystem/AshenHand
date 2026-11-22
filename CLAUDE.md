@@ -47,7 +47,7 @@ bite:
 | `ci.yml` | build, tests, Engine references (RefCheck), Play deploy on every PR | merge only when green |
 | `meitou-compat.yml` | daily RefCheck against the newest Meitou release, nightly and each floor; one `meitou-compat` issue; opens `Meitou: Admit <tag>` cap-lift PRs | a missing member is a port (skill); a nightly-only problem is a warning |
 | `framework-update.yml` | moves `meitou.lock.json` (and `engine`) to new framework releases, PR into `beta` | a red PR is a regression report: fix it in that PR |
-| `release.yml` | on a tag `<slug>-v<version>` on `release`, packages `<Mod>-<version>.zip` via GutenStructure | tag only when asked |
+| `release.yml` | on a tag `<slug>-v<version>` on `release`, packages `<Mod>-<version>.zip` via GutenStructure | tag only when asked: `tools\Tag-Release.ps1` (`-DryRun` prints the commands) |
 
 The template has every workflow; a repo may not have them all yet (`.github/workflows/`).
 
@@ -62,5 +62,5 @@ A `needs-release` label means the merged change only reaches players after promo
 
 ## This repo
 
-- The Ashen Hand (`AshenHand/`, data generator `AshenHand.Data/`; docs `docs/ashen-hand.md`). Locks Rivalry Core in `meitou.lock.json`, so
+- The Ashen Hand (`AshenHand/`, records added in its data phase; docs `docs/ashen-hand.md`). Locks Rivalry Core in `meitou.lock.json`, so
   `engine` follows the lock's engine commit; don't move it on its own.
