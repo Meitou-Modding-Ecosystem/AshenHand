@@ -11,7 +11,7 @@ using SimWorld = Meitou.Simulation.World;
 namespace AshenHand.Tests;
 
 /// <summary>
-/// The Ashen Hand on synthetic data: the generated data file and the two rules.
+/// The Ashen Hand on synthetic data: the records its data phase adds and the two rules.
 /// </summary>
 public class AshenHandTests
 {
@@ -91,6 +91,24 @@ public class AshenHandTests
         var thieves = SquadTemplate.From(db.Find(AshenHandData.ThiefSquad)!);
         Assert.Equal(new RecordLink(AshenHandData.Thief, 1, 4, 0), Assert.Single(thieves.Squad));
         Assert.Equal(AshenHandData.Faction, thieves.Faction);
+    }
+
+    [Fact]
+    public void The_records_come_from_the_data_phase_not_a_shipped_file()
+    {
+        // The game calls EditData only on an entry that declares IModDataPhase itself (MeitouClient docs/modding.md "Data phase").
+        Assert.Contains(typeof(IModDataPhase), typeof(AshenHandMod).GetInterfaces());
+        Assert.Contains("empty-data-mod: true", File.ReadAllText(Path.Combine(RepoRoot(), ".github", "workflows", "release.yml")));
+    }
+
+    /// <summary>
+    /// The repository's root folder: the nearest folder above the test's output holding AshenHand.slnx.
+    /// </summary>
+    static string RepoRoot()
+    {
+        var dir = new DirectoryInfo(AppContext.BaseDirectory);
+        while (dir is not null && !File.Exists(Path.Combine(dir.FullName, "AshenHand.slnx"))) dir = dir.Parent;
+        return dir?.FullName ?? throw new InvalidOperationException("AshenHand.slnx not found above " + AppContext.BaseDirectory);
     }
 
     [Fact]
