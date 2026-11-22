@@ -36,7 +36,7 @@ public static class AshenHandData
         + " owner with every lawful faction]";
 
     /// <summary>
-    /// Builds the data file from the game's records. Throws when the game has no <see cref="Model"/> character.
+    /// Builds the order's records from the game's (the data phase applies them, <see cref="AshenHandMod.EditData"/>). Throws when the game has no <see cref="Model"/> character.
     /// </summary>
     public static FcsFile Build(GameDatabase game)
     {

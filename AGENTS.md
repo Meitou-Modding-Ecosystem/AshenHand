@@ -62,5 +62,5 @@ A `needs-release` label means the merged change only reaches players after promo
 
 ## This repo
 
-- The Ashen Hand (`AshenHand/`, data generator `AshenHand.Data/`; docs `docs/ashen-hand.md`). Locks Rivalry Core in `meitou.lock.json`, so
+- The Ashen Hand (`AshenHand/`, records added in its data phase; docs `docs/ashen-hand.md`). Locks Rivalry Core in `meitou.lock.json`, so
   `engine` follows the lock's engine commit; don't move it on its own.
