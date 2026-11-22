@@ -15,8 +15,9 @@ workflow, merged when CI passes ([framework update](https://github.com/TheIvoryD
 
 ## Layout
 
-- `engine/`: MeitouClient as a git submodule, pinned to the engine commit the mod builds against. After a pull that moves it:
-  `git submodule update --init`.
+- `engine/`: MeitouClient as a git submodule, pinned to the engine commit the mod builds against. `git pull` does not move it: after
+  every pull run `powershell -ExecutionPolicy Bypass -File tools\Update-Local.ps1 -Clean -Build`
+  ([keep clones current](docs/local-development.md#keep-clones-current)).
 - `AshenHand/`: the mod's project and `meitou.json`. `AshenHand.Tests/`: its tests (synthetic worlds, no game install needed).
   `AshenHand.Data/`: the generator that writes `AshenHand.mod` from the installed game (Play runs it).
 - `Play/`: one-click build, deploy and run.
