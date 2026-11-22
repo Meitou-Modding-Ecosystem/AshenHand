@@ -2,8 +2,8 @@
   "id": "ashen.hand",
   "version": "0.3.2",
   "apiVersion": 2,
-  "gameVersion": ">=0.22.0 <0.22.2",
+  "gameVersion": ">=0.22.2",
   "assemblies": ["AshenHand.dll"],
   "entry": "AshenHand.AshenHandMod",
-  "dependencies": [{ "id": "rivalry.core", "version": ">=0.6.5 <0.7.0" }]
+  "dependencies": [{ "id": "rivalry.core", "version": ">=0.6.7 <0.7.0" }]
 }
