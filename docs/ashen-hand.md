@@ -1,6 +1,6 @@
 # The Ashen Hand (content mod)
 
-A shadow order built on [Rivalry Core](https://github.com/Meitou-Modding-Ecosystem/RivalryCore/blob/beta/docs/rivalry-core.md) (`ashen.hand`, needs `rivalry.core` 0.6). Code: `AshenHand/`; data file generator:
+A shadow order built on [Rivalry Core](https://github.com/Meitou-Modding-Ecosystem/RivalryCore/blob/beta/docs/rivalry-core.md) (`ashen.hand`, needs `rivalry.core` 0.6.5+ and Meitou 0.22.0 or 0.22.1). Code: `AshenHand/`; data file generator:
 `AshenHand.Data/`; tests: `AshenHand.Tests/`. The name is a working title.
 
 ## Lore

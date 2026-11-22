@@ -4,7 +4,7 @@ A shadow order for [MeitouClient](https://github.com/Meitou-Modding-Ecosystem/Me
 [Rivalry Core](https://github.com/Meitou-Modding-Ecosystem/RivalryCore): thieves fund it, hunters answer its grudges. Mod id `ashen.hand`;
 what it does, its data file and settings: [docs/ashen-hand.md](docs/ashen-hand.md). GPL-3.0-or-later.
 
-Rivalry Core is not in this repo: `meitou.lock.json` pins its release (`rivalry-core-v0.6.0`), which the build downloads into `deps/`
+Rivalry Core is not in this repo: `meitou.lock.json` pins its release (`rivalry-core-0.6.5-beta.39661ed`), which the build downloads into `deps/`
 ([framework lock](https://github.com/TheIvoryDisaster/GutenStructure/blob/beta/docs/framework-lock.md)). To build against a local Rivalry Core
 clone instead, see [docs/local-development.md](docs/local-development.md). New Rivalry Core releases arrive as PRs from the Framework update
 workflow, merged when CI passes ([framework update](https://github.com/TheIvoryDisaster/GutenStructure/blob/beta/docs/framework-update.md)).
