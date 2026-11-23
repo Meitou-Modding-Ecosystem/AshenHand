@@ -15,6 +15,16 @@ workflow, merged when CI passes ([framework update](https://github.com/TheIvoryD
 - Agent rules for the engine pin, versions, CI and releases: [CLAUDE.md](CLAUDE.md) (same as `AGENTS.md`); step-by-step procedures:
   `.claude/skills/meitou-engine-release`.
 
+## Numbers
+
+Task types and dialogue codes are shared by every loaded mod; Ashen Hand claims none yet; its block is reserved
+([mod number blocks](https://github.com/TheIvoryDisaster/GutenStructure/blob/beta/docs/numbers.md)).
+
+Block 4600-4699
+
+| Number | Pool | Use |
+| --- | --- | --- |
+
 ## Layout
 
 - `engine/`: MeitouClient as a git submodule, pinned to the engine commit the mod builds against. `git pull` does not move it: after
