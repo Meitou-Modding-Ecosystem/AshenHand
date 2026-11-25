@@ -4,11 +4,11 @@
     {
       "id": "rivalry.core",
       "repo": "Meitou-Modding-Ecosystem/RivalryCore",
-      "tag": "rivalry-core-v0.6.8",
-      "asset": "RivalryCore-0.6.8.zip",
-      "sha256": "1bb6321dc2ef0132c3416e50de4f0c9cf2340893b3609a50454371a87c8cfe35",
+      "tag": "rivalry-core-0.6.9-beta.2a689b4",
+      "asset": "RivalryCore-0.6.9-beta.2a689b4.zip",
+      "sha256": "8b4f6a81fda1d935cf95faa66e7ac56a3df519c95feae56ad2035a64f4abc818",
       "folder": "RivalryCore",
-      "engine": "50673ec77cc15b5b568f4cdbe7e62dbb4c65036c"
+      "engine": "550e541df7fee984c953a48ab729dd8465a823bb"
     }
   ]
 }
